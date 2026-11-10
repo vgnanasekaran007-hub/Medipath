@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#102C35" />
+    <link rel="icon" type="image/svg+xml" href="/medipath-mark.svg" />
+    <title>MEDIPATH — Aurelia Pavilion Medical Center | 3D Hospital Navigation &amp; Care</title>
+    <meta
+      name="description"
+      content="MEDIPATH: Find Your Way. Access Care. Save Time. Interactive 3D multi-floor hospital navigation, clinical directories, and outpatient scheduling."
+    />
+    <script>
+      (function () {
+        try {
+          var raw = localStorage.getItem('medipath-app-store-v1');
+          if (raw) {
+            var parsed = JSON.parse(raw);
+            if (parsed && parsed.state && parsed.state.theme === 'dark') {
+              document.documentElement.classList.add('dark');
+            }
+          }
+        } catch (e) {
+          // Ignore storage unavailability
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-ivory text-ink antialiased transition-colors duration-200 selection:bg-teal-deep selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

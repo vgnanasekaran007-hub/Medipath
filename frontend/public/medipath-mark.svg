@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="mp-bg" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#174C50" />
+      <stop offset="100%" stop-color="#0B1D24" />
+    </linearGradient>
+    <linearGradient id="mp-gold" x1="16" y1="14" x2="48" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E5D5B8" />
+      <stop offset="100%" stop-color="#B7A58A" />
+    </linearGradient>
+  </defs>
+  <!-- Architectural Pavilion Shield -->
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#mp-bg)" />
+  <rect x="6.5" y="6.5" width="51" height="51" rx="11.5" stroke="#B7A58A" stroke-opacity="0.45" stroke-width="1.5" />
+  <!-- Multi-floor isometric pavilion silhouette + wayfinding path -->
+  <path d="M18 41V27L32 18L46 27V41" stroke="#EEF2F1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Precision clinical cross integrated into central atrium -->
+  <path d="M32 27V39" stroke="url(#mp-gold)" stroke-width="3.2" stroke-linecap="round" />
+  <path d="M26 33H38" stroke="url(#mp-gold)" stroke-width="3.2" stroke-linecap="round" />
+  <!-- Destination waypoint compass beacon at apex -->
+  <circle cx="32" cy="18" r="4" fill="#B7A58A" stroke="#0B1D24" stroke-width="1.5" />
+  <!-- Step-free arrival promenade base bar -->
+  <path d="M16 46H48" stroke="#B7A58A" stroke-width="2.5" stroke-linecap="round" />
+</svg>
+

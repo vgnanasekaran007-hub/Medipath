@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+build/
+.vite/
+*.tsbuildinfo
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Local dev persistence & test artifacts
+backend/data/dev-store.json
+playwright-report/
+test-results/
+coverage/
+
+# OS & editor
+.DS_Store
+Thumbs.db
+*.log
+

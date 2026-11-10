@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --mp-bg-rgb: 245 243 239; /* #F5F3EF Warm Ivory */
+  --mp-surface-rgb: 255 255 255; /* #FFFFFF Crisp White */
+  --mp-text-rgb: 19 38 43; /* #13262B Unified High-Contrast Obsidian Pine */
+  --mp-teal-deep-rgb: 16 44 53; /* #102C35 Primary Action Fill */
+  --mp-teal-forest-rgb: 23 76 80; /* #174C50 Secondary Fill */
+  --mp-teal-mist-rgb: 229 237 236; /* #E5EDEC Soft Clinical Tint */
+  --mp-champagne-rgb: 183 165 138; /* #B7A58A Warm Champagne Accent */
+  --mp-champagne-soft-rgb: 237 233 224; /* #EDE9E0 Elevated Light Band */
+  --mp-border-rgb: 214 206 192; /* #D6CEC0 Architectural Divider */
+  --mp-emergency-rgb: 184 50 39; /* #B83227 Accessible Emergency Red */
+  --mp-emergency-soft-rgb: 251 234 232; /* #FBEAE8 */
+  --mp-architectural-rgb: 11 22 26; /* #0B161A 3D Stage Ground */
+
+  --mp-primary: #102c35;
+  --mp-secondary: #174c50;
+  --mp-accent: #b7a58a;
+  --mp-bg: #f5f3ef;
+  --mp-surface: #ffffff;
+  --mp-text: #13262b;
+  --mp-border: #d6cec0;
+  --mp-emergency: #b83227;
+}
+
+.dark {
+  color-scheme: dark;
+  --mp-bg-rgb: 10 21 25; /* #0A1519 Deep Architectural Night */
+  --mp-surface-rgb: 17 34 40; /* #112228 Marine Slate Card Surface */
+  --mp-text-rgb: 237 242 241; /* #EDF2F1 Unified Crisp Alabaster Font Color */
+  --mp-teal-deep-rgb: 23 68 78; /* #17444E Primary Elevated Control Fill */
+  --mp-teal-forest-rgb: 31 92 96; /* #1F5C60 Secondary Fill */
+  --mp-teal-mist-rgb: 22 46 54; /* #162E36 Active Panel Tint */
+  --mp-champagne-rgb: 198 178 146; /* #C6B292 Illuminated Champagne */
+  --mp-champagne-soft-rgb: 24 46 53; /* #182E35 Subtle Interactive Band */
+  --mp-border-rgb: 41 72 82; /* #294852 Dark Architectural Border */
+  --mp-emergency-rgb: 220 76 64; /* #DC4C40 High-Contrast Dark Emergency */
+  --mp-emergency-soft-rgb: 64 22 20; /* #401614 Dark Emergency Banner */
+  --mp-architectural-rgb: 6 13 16; /* #060D10 3D Stage Deep Night */
+
+  --mp-primary: #17444e;
+  --mp-secondary: #1f5c60;
+  --mp-accent: #c6b292;
+  --mp-bg: #0a1519;
+  --mp-surface: #112228;
+  --mp-text: #edf2f1;
+  --mp-border: #294852;
+  --mp-emergency: #dc4c40;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', 'Noto Sans Tamil', sans-serif;
+    font-size: 16px;
+    color: var(--mp-text);
+    background-color: var(--mp-bg);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    color: var(--mp-text);
+    background-color: var(--mp-bg);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: 'Manrope', 'Noto Sans Tamil', sans-serif;
+    color: inherit;
+  }
+
+  input:not([type='checkbox']):not([type='radio']),
+  select,
+  textarea {
+    color: var(--mp-text);
+    background-color: rgb(var(--mp-surface-rgb));
+  }
+
+  .dark select option {
+    background-color: #112228;
+    color: #edf2f1;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--mp-accent);
+    outline-offset: 2px;
+  }
+
+  .dark-surface :focus-visible,
+  [data-theme='architectural'] :focus-visible {
+    outline: 2px solid var(--mp-accent);
+    outline-offset: 2px;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  inset-inline-start: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background: var(--mp-primary);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: top 150ms ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--mp-border) transparent;
+}
+
+.leaflet-container {
+  z-index: 10 !important;
+  font-family: 'Inter', 'Noto Sans Tamil', sans-serif !important;
+}
+
+.dark .leaflet-popup-content-wrapper,
+.dark .leaflet-popup-tip {
+  background: #112228;
+  color: #edf2f1;
+  border: 1px solid #294852;
+}
+
+.dark-svg-floor rect[fill='#FAF9F6'],
+.dark-svg-floor rect[fill='#FFFFFF'],
+.dark-svg-floor rect[fill='#F5F3EF'] {
+  fill: #12242b !important;
+}
+
+.dark-svg-floor rect[stroke='#102C35'],
+.dark-svg-floor line[stroke='#102C35'],
+.dark-svg-floor path[stroke='#102C35'] {
+  stroke: #4d7480 !important;
+}
+
+.dark-svg-floor text {
+  fill: #edf2f1 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

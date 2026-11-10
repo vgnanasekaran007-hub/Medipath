@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: medipath-api
+    runtime: node
+    plan: starter
+    region: singapore
+    buildCommand: npm install --workspace=shared --workspace=backend && npm run build -w shared && npm run build -w backend
+    startCommand: node backend/dist/server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4000
+      - key: PERSISTENCE_MODE
+        value: supabase
+      - key: FRONTEND_URL
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: SUPABASE_JWT_SECRET
+        sync: false
+
